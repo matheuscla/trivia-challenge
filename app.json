@@ -1,0 +1,17 @@
+{
+  "name": "trivia",
+  "displayName": "trivia",
+  "expo": {
+    "name": "trivia",
+    "slug": "trivia",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
