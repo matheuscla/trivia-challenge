@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { formatText } from '../../utils/index';
+
 import QuestionOption from '../QuestionOption';
 
 import { Card, Category, Container, Header, Question, Subtitle } from './styles';
@@ -21,7 +23,7 @@ const QuestionCard = ({ category, difficulty, question, questionNumber, onSelect
             {difficulty.name}
           </Subtitle>
         </Header>
-        <Question>{question.question}</Question>
+        <Question>{formatText(question.question)}</Question>
         {alternatives.map(alternative => <QuestionOption onPress={() => onSelect(question, alternative)} key={alternative} title={alternative} /> )}
       </Card>
     </Container>

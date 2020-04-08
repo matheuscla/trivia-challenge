@@ -14,6 +14,7 @@ export const Container = styled.TouchableOpacity`
 
 export const InnerContainer = styled.View`
   flex-direction: row;
+  align-items: center;
 `
 
 export const Text = styled.Text`
