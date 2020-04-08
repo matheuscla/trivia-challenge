@@ -1,13 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCategory } from '../../store/ducks/game';
 
 import Button from '../../components/Button';
 
 import { Container, Title } from './styles';
 import imagePaths from './imagePaths';
 
-const Categories = () => {
+const Categories = ({ navigation }) => {
   const categories = useSelector(state => state.game.categories);
+  const dispatch = useDispatch();
+
+  const select = async (id) => {
+    await dispatch(selectCategory(id));
+
+    navigation.navigate('Difficulty');
+  }
 
   return(
     <Container>
@@ -15,6 +23,7 @@ const Categories = () => {
       
       {categories.map(category => (
         <Button
+          onPress={() => select(category.id)}
           icon={imagePaths[category.icon]}
           title={category.name}
           key={category.id}

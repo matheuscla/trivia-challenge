@@ -1,8 +1,14 @@
 //Actions Types
 export const Types = {
+  SELECT_CATEGORY: 'game/SELECT_CATEGORY'
 };
 
+export const selectCategory = id => dispatch => {
+  return dispatch({ type: Types.SELECT_CATEGORY, payload: id })
+}
+
 const INITIAL_STATE = {
+  selected_category: null,
   categories: [
     {
       id: 9,
@@ -45,6 +51,8 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
+    case Types.SELECT_CATEGORY:
+      return { ...state, selected_category: state.categories.find(category => category.id === action.payload)}
     default:
       return state;
   }
