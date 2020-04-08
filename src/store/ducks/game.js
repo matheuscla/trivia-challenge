@@ -1,7 +1,10 @@
+import axios from 'axios';
+
 //Actions Types
 export const Types = {
   SELECT_CATEGORY: 'game/SELECT_CATEGORY',
-  SELECT_DIFFICULTY: 'game/SELECT_DIFFICULTY'
+  SELECT_DIFFICULTY: 'game/SELECT_DIFFICULTY',
+  GET_QUESTIONS: 'game/GET_QUESTIONS',
 };
 
 export const selectCategory = id => dispatch => {
@@ -12,18 +15,29 @@ export const selectDifficulty = name => dispatch => {
   return dispatch({ type: Types.SELECT_DIFFICULTY, payload: name });
 }
 
+export const getQuestions = () => async (dispatch, state) => {
+  const { data } = await axios.get(`https://opentdb.com/api.php?amount=10&difficulty=${state().game.selected_difficulty.id}&category=${state().game.selected_category.id}`);
+
+  return dispatch({ type: Types.GET_QUESTIONS, payload: data.results });
+}
+
 const INITIAL_STATE = {
+  questions: [],
   selected_category: null,
+  selected_difficulty: null,
   difficulties: [
     {
+      id: 'easy',
       name: 'Easy',
       color: '#25489C'
     },
     {
+      id: 'medium',
       name: 'Medium',
       color: '#6DB82A'
     },
     {
+      id: 'hard',
       name: 'Hard',
       color: '#DD3E3E'
     }
@@ -73,7 +87,9 @@ export default (state = INITIAL_STATE, action) => {
     case Types.SELECT_CATEGORY:
       return { ...state, selected_category: state.categories.find(category => category.id === action.payload)}
     case Types.SELECT_DIFFICULTY:
-      return { ...state, selected_difficulty: state.difficulties.find(difficulty => difficulty.id === action.payload)}
+      return { ...state, selected_difficulty: state.difficulties.find(difficulty => difficulty.name === action.payload)}
+    case Types.GET_QUESTIONS:
+      return { ...state, questions: action.payload }
     default:
       return state;
   }
