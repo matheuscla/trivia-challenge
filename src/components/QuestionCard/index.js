@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useSelector } from 'react';
 
 import QuestionOption from '../QuestionOption';
 
 import { Card, Category, Container, Header, Question, Subtitle } from './styles';
 
-const QuestionCard = () => {
+const QuestionCard = ({ category, difficulty, question }) => {
+  const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
+  
+  const alternatives = shuffleArray([question.correct_answer, ...question.incorrect_answers]);
+
   return(
     <Container>
       <Card>
@@ -12,13 +16,13 @@ const QuestionCard = () => {
           <Subtitle>
             1/10
           </Subtitle>
-          <Category>Films</Category>
+          <Category>{category.name}</Category>
           <Subtitle>
-            Hard
+            {difficulty.name}
           </Subtitle>
         </Header>
-        <Question>In the 1976 film Taxi Driver, how many guns did Travis buy from the salesman?</Question>
-        <QuestionOption title='2' />
+        <Question>{question.question}</Question>
+        {alternatives.map(alternative => <QuestionOption key={alternative} title={alternative} /> )}
       </Card>
     </Container>
   );

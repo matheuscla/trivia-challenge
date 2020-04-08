@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.View`
   flex: 1;
+  padding-bottom: 60px;
 `
 
 export const Card = styled.View`

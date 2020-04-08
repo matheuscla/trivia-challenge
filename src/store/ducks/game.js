@@ -69,7 +69,7 @@ const INITIAL_STATE = {
     },
     {
       id: 12,
-      name: 'music',
+      name: 'Music',
       icon: 'music',
       color: '#745CCF',
     },
