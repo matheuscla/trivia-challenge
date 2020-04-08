@@ -1,14 +1,33 @@
 //Actions Types
 export const Types = {
-  SELECT_CATEGORY: 'game/SELECT_CATEGORY'
+  SELECT_CATEGORY: 'game/SELECT_CATEGORY',
+  SELECT_DIFFICULTY: 'game/SELECT_DIFFICULTY'
 };
 
 export const selectCategory = id => dispatch => {
-  return dispatch({ type: Types.SELECT_CATEGORY, payload: id })
+  return dispatch({ type: Types.SELECT_CATEGORY, payload: id });
+}
+
+export const selectDifficulty = name => dispatch => {
+  return dispatch({ type: Types.SELECT_DIFFICULTY, payload: name });
 }
 
 const INITIAL_STATE = {
   selected_category: null,
+  difficulties: [
+    {
+      name: 'Easy',
+      color: '#25489C'
+    },
+    {
+      name: 'Medium',
+      color: '#6DB82A'
+    },
+    {
+      name: 'Hard',
+      color: '#DD3E3E'
+    }
+  ],
   categories: [
     {
       id: 9,
@@ -53,6 +72,8 @@ export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case Types.SELECT_CATEGORY:
       return { ...state, selected_category: state.categories.find(category => category.id === action.payload)}
+    case Types.SELECT_DIFFICULTY:
+      return { ...state, selected_difficulty: state.difficulties.find(difficulty => difficulty.id === action.payload)}
     default:
       return state;
   }

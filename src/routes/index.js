@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
 import Categories from '../screens/Categories';
 import Difficulty from '../screens/Difficulty';
+import Questions from '../screens/Questions';
 import Results from '../screens/Results';
 
 const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ const Routes = () => (
       <Stack.Screen name='Home' component={Home} options={options} />
       <Stack.Screen name='Categories' component={Categories} options={options} />
       <Stack.Screen name='Difficulty' component={Difficulty} options={options} />
+      <Stack.Screen name='Questions' component={Questions} options={options} />
       <Stack.Screen name='Results' component={Results} options={options} />
     </Stack.Navigator>
   </NavigationContainer>
