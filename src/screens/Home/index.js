@@ -1,9 +1,31 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import Button from  '../../components/Button';
+
+import { 
+  Container,
+  InnerContainer,
+  Title,
+  Text,
+  MedalIcon
+} from './styles';
 
 const Home = () => {
   return(
-    <Text>Home page</Text>
+    <Container>
+      <InnerContainer>
+        <MedalIcon source={require('../../assets/medal.png')} />
+        <Title>Welcome to the {'\n'} trivia challenge</Title>
+
+        <Text marginTop={94} marginBottom={24}>You will be presented with 10 questions</Text>
+        <Text>Can you score 100%?</Text>
+      </InnerContainer>
+
+      <InnerContainer>
+        <Text marginBottom={24}>Let's get started</Text>
+        <Button title='Join game' />
+      </InnerContainer>
+    </Container>
   );
 }
 
