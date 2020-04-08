@@ -1,6 +1,15 @@
 import React from 'react';
-import { Text } from 'react-native';
 
-const Questions = () => <Text>Questions page</Text>
+import QuestionCard from '../../components/QuestionCard';
+
+import { Container } from './styles';
+
+const Questions = () => {
+  return(
+    <Container>
+      <QuestionCard />
+    </Container>
+  );
+}
 
 export default Questions;
