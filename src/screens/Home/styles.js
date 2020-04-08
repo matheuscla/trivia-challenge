@@ -18,6 +18,7 @@ export const Title = styled.Text`
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
+  font-family: 'Poppins-ExtraBold';
 `
 
 export const MedalIcon = styled.Image`

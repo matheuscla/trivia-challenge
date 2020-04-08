@@ -13,6 +13,7 @@ export const Header = styled.View`
 export const Question = styled.Text`
   font-weight: 600;
   font-size: 14px;
+  font-family: 'Poppins-Bold';
   line-height: 22px;
   margin-left: 10px;
   margin-top: -6px;
@@ -25,4 +26,5 @@ export const Answer = styled.Text`
   line-height: 22px;
   color: #2B3A4A;
   margin-left: 20px;
+  font-family: 'Poppins-Bold';
 `

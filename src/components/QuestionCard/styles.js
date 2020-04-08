@@ -22,6 +22,7 @@ export const Category = styled.Text`
   font-size: 16px;
   line-height: 24px;
   color: #2B3A4A;
+  font-family: 'Poppins-Bold';
 `
 
 export const Subtitle = styled(Category)`
@@ -35,4 +36,5 @@ export const Question = styled.Text`
   color: #2B3A4A;
   text-align: center;
   margin-bottom: 24px;
+  font-family: 'Poppins-Bold';
 `

@@ -22,6 +22,7 @@ export const Text = styled.Text`
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;
+  font-family: 'Poppins-Bold';
 `
 
 export const Icon = styled.Image`

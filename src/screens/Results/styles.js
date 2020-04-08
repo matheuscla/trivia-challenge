@@ -27,6 +27,7 @@ export const Title = styled.Text`
   color: #2B3A4A;
   text-align: center;
   margin-bottom: 24px;
+  font-family: 'Poppins-Bold';
 `
 
 export const Icon = styled.Image`
