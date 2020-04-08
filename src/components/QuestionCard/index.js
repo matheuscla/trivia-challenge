@@ -1,10 +1,10 @@
-import React, { useSelector } from 'react';
+import React from 'react';
 
 import QuestionOption from '../QuestionOption';
 
 import { Card, Category, Container, Header, Question, Subtitle } from './styles';
 
-const QuestionCard = ({ category, difficulty, question }) => {
+const QuestionCard = ({ category, difficulty, question, questionNumber, onSelect }) => {
   const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
   
   const alternatives = shuffleArray([question.correct_answer, ...question.incorrect_answers]);
@@ -14,7 +14,7 @@ const QuestionCard = ({ category, difficulty, question }) => {
       <Card>
         <Header>
           <Subtitle>
-            1/10
+            {`${questionNumber}/10`}
           </Subtitle>
           <Category>{category.name}</Category>
           <Subtitle>
@@ -22,7 +22,7 @@ const QuestionCard = ({ category, difficulty, question }) => {
           </Subtitle>
         </Header>
         <Question>{question.question}</Question>
-        {alternatives.map(alternative => <QuestionOption key={alternative} title={alternative} /> )}
+        {alternatives.map(alternative => <QuestionOption onPress={() => onSelect(question, alternative)} key={alternative} title={alternative} /> )}
       </Card>
     </Container>
   );
