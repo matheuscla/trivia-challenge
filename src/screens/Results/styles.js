@@ -3,17 +3,21 @@ import styled from 'styled-components';
 export const Container = styled.ScrollView`
   padding: 50px 18px 0 18px;
   flex: 1;
+  background: #fff;
 `
 
 export const InnerContainer = styled.View`
   align-items: center;
   flex: 1;
   padding-bottom: 100px;
+
 `
 
 export const Divider = styled.View`
-  border-top-color: #F1F1F1;
+  width: 100%;
   border-top-width: 1px;
+  border-top-color: #F1F1F1;
+  margin-bottom: 24px;
 `
 
 export const Title = styled.Text`

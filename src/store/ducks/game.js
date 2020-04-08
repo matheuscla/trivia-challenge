@@ -6,7 +6,8 @@ export const Types = {
   SELECT_DIFFICULTY: 'game/SELECT_DIFFICULTY',
   GET_QUESTIONS: 'game/GET_QUESTIONS',
   SET_SCORE: 'game/SET_SCORE',
-  SET_ANSWER: 'game/SET_ANSWER'
+  SET_ANSWER: 'game/SET_ANSWER',
+  RESTART_GAME: 'game/RESTART_GAME'
 };
 
 export const selectCategory = id => dispatch => {
@@ -29,6 +30,10 @@ export const setScore = () => dispatch => {
 
 export const setAnswer = answer => dispatch => {
   return dispatch({ type: Types.SET_ANSWER, payload: answer });
+}
+
+export const restartGame = () => dispatch => {
+  return dispatch({ type: Types.RESTART_GAME });
 }
 
 const INITIAL_STATE = {
@@ -106,6 +111,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, score: state.score + 1};
     case Types.SET_ANSWER:
       return { ...state, answers: state.answers.concat(action.payload)};  
+    case Types.RESTART_GAME:
+      return { ...state, score: 0, answers: [], questions: [] };
     default:
       return state;
   }
