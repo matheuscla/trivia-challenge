@@ -33,4 +33,5 @@ export const Question = styled.Text`
   line-height: 26px;
   color: #2B3A4A;
   text-align: center;
+  margin-bottom: 24px;
 `

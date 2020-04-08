@@ -1,5 +1,7 @@
 import React from 'react';
 
+import QuestionOption from '../QuestionOption';
+
 import { Card, Category, Container, Header, Question, Subtitle } from './styles';
 
 const QuestionCard = () => {
@@ -16,6 +18,7 @@ const QuestionCard = () => {
           </Subtitle>
         </Header>
         <Question>In the 1976 film Taxi Driver, how many guns did Travis buy from the salesman?</Question>
+        <QuestionOption title='2' />
       </Card>
     </Container>
   );
