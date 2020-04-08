@@ -35,7 +35,7 @@ const Questions = ({ navigation }) => {
 
     await dispatch(setAnswer(answer));
 
-    if(currentStep === 9) {
+    if(currentStep === questions.length - 1) {
       navigation.navigate('Results');
     }
 

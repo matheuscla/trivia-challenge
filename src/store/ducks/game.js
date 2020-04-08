@@ -18,8 +18,8 @@ export const selectDifficulty = name => dispatch => {
   return dispatch({ type: Types.SELECT_DIFFICULTY, payload: name });
 }
 
-export const getQuestions = () => async (dispatch, state) => {
-  const { data } = await axios.get(`https://opentdb.com/api.php?amount=10&difficulty=${state().game.selected_difficulty.id}&category=${state().game.selected_category.id}`);
+export const getQuestions = (amount = 10) => async (dispatch, state) => {
+  const { data } = await axios.get(`https://opentdb.com/api.php?amount=${amount}&difficulty=${state().game.selected_difficulty.id}&category=${state().game.selected_category.id}`);
 
   return dispatch({ type: Types.GET_QUESTIONS, payload: data.results });
 }
