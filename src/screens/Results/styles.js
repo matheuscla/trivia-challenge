@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.ScrollView`
-  padding: 50px 18px 60px 18px;
+  padding: 50px 18px 0 18px;
   flex: 1;
 `
 
 export const InnerContainer = styled.View`
-  flex: 1;
   align-items: center;
+  flex: 1;
+  padding-bottom: 100px;
+`
+
+export const Divider = styled.View`
+  border-top-color: #F1F1F1;
+  border-top-width: 1px;
 `
 
 export const Title = styled.Text`
@@ -16,6 +22,7 @@ export const Title = styled.Text`
   line-height: 36px;
   color: #2B3A4A;
   text-align: center;
+  margin-bottom: 24px;
 `
 
 export const Icon = styled.Image`

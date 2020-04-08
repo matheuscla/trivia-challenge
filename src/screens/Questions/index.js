@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getQuestions, setScore } from '../../store/ducks/game';
+import { getQuestions, setScore, setAnswer } from '../../store/ducks/game';
 
 import Loading from '../../components/Loading';
 import QuestionCard from '../../components/QuestionCard';
@@ -29,9 +29,11 @@ const Questions = ({ navigation }) => {
   }, [loading])
 
   const checkAnwser = async (currentQuestion, answer) => {
-    if(currentQuestion.correct_anser === answer) {
+    if(currentQuestion.correct_answer === answer) {
       await dispatch(setScore());
     }
+
+    await dispatch(setAnswer(answer));
 
     if(currentStep === 9) {
       navigation.navigate('Results');

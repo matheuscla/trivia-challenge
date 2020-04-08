@@ -3,9 +3,9 @@ import { Image } from 'react-native';
 
 import { Container, Icon, Text, InnerContainer } from './styles';
 
-const Button = ({ title, onPress, color, marginBottom, icon }) => {
+const Button = ({ title, onPress, color, marginBottom, marginTop, icon }) => {
   return(
-    <Container onPress={onPress} color={color} marginBottom={marginBottom}>
+    <Container onPress={onPress} color={color} marginBottom={marginBottom} marginTop={marginTop}>
       <InnerContainer>
         {icon && <Icon source={icon} />}
         <Text>{title}</Text>

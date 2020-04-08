@@ -9,6 +9,7 @@ export const Question = styled.Text`
   font-weight: 600;
   font-size: 14px;
   line-height: 22px;
+  color: ${props => props.isCorrect ? '#6DB82A' : '#DD3E3E'};
 `
 
 export const Answer = styled.Text`

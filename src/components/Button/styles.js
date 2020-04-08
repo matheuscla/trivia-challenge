@@ -9,6 +9,7 @@ export const Container = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: ${props => props.marginBottom ? `${props.marginBottom}px` : 0};
+  margin-top: ${props => props.marginTop ? `${props.marginTop}px` : 0};
 `
 
 export const InnerContainer = styled.View`
