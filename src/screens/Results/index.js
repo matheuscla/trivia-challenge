@@ -1,9 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import QuestionCollapse from '../../components/QuestionCollapse';
+
+import { Container, Icon, InnerContainer, Title } from './styles';
 
 const Results = () => {
   return(
-    <Text>Results page</Text>
+    <Container>
+      <InnerContainer>
+        <Icon source={require('../../assets/score.png')} />
+        <Title>you scored {'\n'} 3/10</Title>
+        
+        <QuestionCollapse />
+      </InnerContainer>
+    </Container>
   );
 }
 
