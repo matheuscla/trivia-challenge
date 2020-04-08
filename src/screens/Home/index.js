@@ -10,7 +10,7 @@ import {
   MedalIcon
 } from './styles';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return(
     <Container>
       <InnerContainer>
@@ -23,7 +23,7 @@ const Home = () => {
 
       <InnerContainer>
         <Text marginBottom={24}>Let's get started</Text>
-        <Button title='Join game' />
+        <Button onPress={() => navigation.navigate('Categories')} title='Join game' />
       </InnerContainer>
     </Container>
   );

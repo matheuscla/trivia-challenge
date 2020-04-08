@@ -1,13 +1,16 @@
 import React from 'react';
 import { Image } from 'react-native'; 
 
-import { Container, Text } from './styles';
+import { Container, Icon, Text, InnerContainer } from './styles';
 
-
-const Button = ({ title }) => {
+const Button = ({ title, onPress, color, marginBottom, icon }) => {
   return(
-    <Container>
-      <Text>{title}</Text>
+    <Container onPress={onPress} color={color} marginBottom={marginBottom}>
+      <InnerContainer>
+        {icon && <Icon source={icon} />}
+        <Text>{title}</Text>
+      </InnerContainer>
+
       <Image source={require('../../assets/right-arrow.png')}/>
     </Container>
   );
